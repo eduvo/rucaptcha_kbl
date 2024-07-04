@@ -29,7 +29,7 @@ module RuCaptcha
         code: res[0],
         time: Time.now.to_i
       }
-      RuCaptcha.cache.write(rucaptcha_sesion_key_key, session_val, expires_in: RuCaptcha.config.expires_in)
+      RuCaptcha.cache.write(rucaptcha_sesion_key_key, session_val, ex: RuCaptcha.config.expires_in)
       res[1]
     end
 
